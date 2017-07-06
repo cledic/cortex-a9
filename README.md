@@ -20,6 +20,7 @@ To compile and run qemu I use the BASH shell that Octave have installed on my PC
 
 # RUN the software
 To run the software I use the command "make qemu". The make run "qemu-system-arm -M vexpress-a9 -serial mon:stdio -kernel bin/kernel.elf".
+![alt text](https://github.com/cledic/cortex-a9/blob/master/cortex-a9_qemu.PNG "How run qemu")
 
 # DEBUG the software
 To debug I use "make dqemu" and on a second bash shell I run: "arm-linux-gnueabihf-gdb -se bin/kernel.elf -x gdb_cmd.txt".
