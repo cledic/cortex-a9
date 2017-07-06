@@ -8,24 +8,36 @@ if I have time I'm planning to clean up the code and seperate things like (Makef
 tags: qemu cortex-a9 vexpress-a9 arm gic pl050 pl111 sp804 pl011 kmi clcd timer uart irq
 
 # NEON development on an emulated cortex-a9
-I use this code to try to develop NEON assembler code on cortex-a9 emulated processor on windows. I use Linaro GCC, and QEMU.
+I use this code to try to develop NEON assembler code on cortex-a9 emulated processor on windows. I use **Linaro GCC**, and **QEMU**.
 To debug the software I use gdb. See the file gdb_cmd.txt for the run time gdb options I use.
 
 # Software installation
-I used: qemu-w32-setup-20170420 and gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf.tar
+I use: **qemu-w32-setup-20170420** and **gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf.tar**.
 
 After the installation I update the PATH environment var with the gcc and qemu path.
 
 To compile and run qemu I use the BASH shell that Octave have installed on my PC. I modify the Makefile accordirly.
 
 # RUN the software
-To run the software I use the command "make qemu". The make run "qemu-system-arm -M vexpress-a9 -serial mon:stdio -kernel bin/kernel.elf".
+To run the software I use the command `make qemu`. The make run `qemu-system-arm -M vexpress-a9 -serial mon:stdio -kernel bin/kernel.elf`.
 
 ![alt text](https://github.com/cledic/cortex-a9/blob/master/cortex-a9_qemu.PNG "How run qemu")
 
 # DEBUG the software
-To debug I use "make dqemu" and on a second bash shell I run: "arm-linux-gnueabihf-gdb -se bin/kernel.elf -x gdb_cmd.txt".
-At this point, I set a breakpoint and issue the "c" command. Then I use the "si" command to "step-into". The GDB is configured to show the assembler line.
+To debug I use `make dqemu` and, on a second bash shell, I run: `arm-linux-gnueabihf-gdb -se bin/kernel.elf -x gdb_cmd.txt`.
+At this point, I set a breakpoint and issue the `c` command to `continue`. Then I use the `si` command to `step-into`. The GDB is configured to show the assembler line.
 
 ![alt text](https://github.com/cledic/cortex-a9/blob/master/cortex-a9_qemu_gdb.PNG "How run gdb with qemu")
+
+# Internet Link
+## NEON
+[ARM Coding for NEON Part 1: Load and Stores](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-1-load-and-stores)
+[ARM Coding for NEON Part 2: Dealing With Leftovers](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-2-dealing-with-leftovers)
+[ARM Coding for NEON Part 3: Matrix Multiplication](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-3-matrix-multiplication)
+[ARM Coding for NEON Part 4: Shifting Left and Right](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-4-shifting-left-and-right)
+[ARM Coding for NEON Part 5: Rearranging Vectors](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-5-rearranging-vectors)
+[Online NEON Simulator](http://szeged.github.io/nevada/)
+## GDB 
+[Source and Machine Code](https://www-zeuthen.desy.de/unix/unixguide/infohtml/gdb/Machine-Code.html)
+[Using gdb for Assembly Language Debugging](https://www.csee.umbc.edu/~cpatel2/links/310/nasm/gdb_help.shtml)
 
