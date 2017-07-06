@@ -43,6 +43,8 @@ At this point, I set a breakpoint and issue the `c` command to `continue`. Then 
 
 [ARM Coding for NEON Part 5: Rearranging Vectors](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-5-rearranging-vectors)
 
+[ARM NEON 1.0 Programmer's Guide](https://developer.arm.com/docs/den0018/latest/neontm-version-10-programmers-guide)
+
 [Online NEON Simulator](http://szeged.github.io/nevada/)
 
 ## GDB 
@@ -50,5 +52,13 @@ At this point, I set a breakpoint and issue the `c` command to `continue`. Then 
 [Source and Machine Code](https://www-zeuthen.desy.de/unix/unixguide/infohtml/gdb/Machine-Code.html)
 
 [Using gdb for Assembly Language Debugging](https://www.csee.umbc.edu/~cpatel2/links/310/nasm/gdb_help.shtml)
+
+## GCC Inline Assembler
+
+[ARM GCC Inline Assembler Cookbook](http://www.ethernut.de/en/documents/arm-inline-asm.html)
+
+[GCC Inline Assembler PDF](http://www.ic.unicamp.br/~celio/mc404-s2-2015/docs/ARM-GCC-Inline-Assembler-Cookbook.pdf)
+
+
 
 
