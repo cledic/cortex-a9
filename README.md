@@ -7,15 +7,21 @@ if I have time I'm planning to clean up the code and seperate things like (Makef
 
 tags: qemu cortex-a9 vexpress-a9 arm gic pl050 pl111 sp804 pl011 kmi clcd timer uart irq
 
-# NEON development
-I use this code to try to develop NEON assembler code on windows, using Linaro GCC and QEMU.
+# NEON development on an emulated cortex-a9
+I use this code to try to develop NEON assembler code on cortex-a9 emulated processor on windows. I use Linaro GCC, and QEMU.
+To debug the software I use gdb. See the file gdb_cmd.txt for the run time gdb options I use.
 
 # Software installation
-I donwload and install:
+I used: qemu-w32-setup-20170420 and gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf.tar
 
-qemu-w32-setup-20170420
+After the installation I update the PATH environment var with the gcc and qemu path.
 
-gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf.tar
+To compile and run qemu I use the BASH shell that Octave have installed on my PC. I modify the Makefile accordirly.
 
-Then I update the PATH environment var with the gcc and qemu path.
+# RUN the software
+To run the software I use the command "make qemu". The make run "qemu-system-arm -M vexpress-a9 -serial mon:stdio -kernel bin/kernel.elf".
+
+# DEBUG the software
+To debug I use "make dqemu" and on a second bash shell I run: "arm-linux-gnueabihf-gdb -se bin/kernel.elf -x gdb_cmd.txt".
+At this point, I set a breakpoint and issue the "c" command. Then I use the "si" command to "step-into". The GDB is configured to show the assembler line.
 
