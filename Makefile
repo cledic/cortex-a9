@@ -1,4 +1,4 @@
-TOOLCHAIN = arm-none-eabi
+TOOLCHAIN = arm-linux-gnueabihf
 TARGET = kernel.elf
 ARMARCH = armv7-a
 CORE = cortex-a9
@@ -13,11 +13,13 @@ BINDIR   = bin
 
 LFILE = $(SRCDIR)/linker.ld
 # Compile flags here
-CFLAGS   = -std=gnu11 -Wall -nostartfiles -fno-exceptions -mcpu=$(CORE) -static -g
-AFLAGS   = 
+CFLAGS   = -std=gnu11 -Wall -nostartfiles -fno-exceptions -mcpu=$(CORE) -static -g 
+CFLAGS  += -mfpu=neon -lm
+AFLAGS   = -mfpu=neon
 LINKER   = $(CC) -o
 # linking flags here
-LFLAGS   = -Wall -T $(LFILE) -nostartfiles -fno-exceptions --specs=nosys.specs -mcpu=$(CORE) -static -g -lc
+# LFLAGS   = -Wall -T $(LFILE) -nostartfiles -fno-exceptions --specs=nosys.specs -mcpu=$(CORE) -static -g -lc
+LFLAGS   = -Wall -T $(LFILE) -nostartfiles -fno-exceptions -mcpu=$(CORE) -static -g -lc
 
 
 GDB = $(TOOLCHAIN)-gdb
@@ -59,7 +61,7 @@ qemu:
 gdb: 
 	$(GDB) $(BINDIR)/$(TARGET)
 
-dqemu: all
+dqemu:
 	$(QEMU) -s -S $(QEMU_OPTS) $(BINDIR)/$(TARGET)
 
 .PHONY: clean
