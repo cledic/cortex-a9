@@ -8,15 +8,15 @@ if I have time I'm planning to clean up the code and seperate things like (Makef
 tags: qemu cortex-a9 vexpress-a9 arm gic pl050 pl111 sp804 pl011 kmi clcd timer uart irq
 
 # NEON development on an emulated cortex-a9
-I use this code to try to develop NEON assembler code on cortex-a9 emulated processor on windows. I use **Linaro GCC**, and **QEMU**.
-To debug the software I use gdb. See the file gdb_cmd.txt for the run time gdb options I use.
+I use this code to try to develop NEON assembler code on **cortex-a9** emulated processor on windows. I use **Linaro GCC**, and **QEMU**.
+To debug the software I use **GDB**. See the file `gdb_cmd.txt` for the run time **GDB** options I use.
 
 # Software installation
 I use: **qemu-w32-setup-20170420** and **gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf.tar**.
 
-After the installation I update the PATH environment var with the gcc and qemu path.
+After the installation I update the PATH environment var with the **GCC** and **QEMU** path.
 
-To compile and run qemu I use the BASH shell that Octave have installed on my PC. I modify the Makefile accordirly.
+To compile and run **QEMU** I use the BASH shell that Octave have installed on my PC. I modify the Makefile accordirly.
 
 # RUN the software
 To run the software I use the command `make qemu`. The make run `qemu-system-arm -M vexpress-a9 -serial mon:stdio -kernel bin/kernel.elf`.
@@ -25,7 +25,7 @@ To run the software I use the command `make qemu`. The make run `qemu-system-arm
 
 # DEBUG the software
 To debug I use `make dqemu` and, on a second bash shell, I run: `arm-linux-gnueabihf-gdb -se bin/kernel.elf -x gdb_cmd.txt`.
-At this point, I set a breakpoint and issue the `c` command to `continue`. Then I use the `si` command to `step-into`. The GDB is configured to show the assembler line.
+At this point, I set a breakpoint with the `b 77` comamnd, and issue the `c` command to `continue`. Then I use the `si` command to `step-into`. The GDB is configured to show the assembler line.
 
 ![alt text](https://github.com/cledic/cortex-a9/blob/master/neon_docs/cortex-a9_qemu_gdb.PNG "How run gdb with qemu")
 
@@ -36,7 +36,7 @@ Nothing special! I made a function to enable the NEON capabilities: `EnableNEON_
 
 I update the file ugui.c with a couple of functions to draw RGB.
 
-Inside the file `kernel.c` I write some code to do geometrics modification. Some code came from a [my project](https://www.youtube.com/watch?v=LL79iNhs-dI) the other, working very well, from: `Image Processing in C by Dwayne Phillips`.
+Inside the file `kernel.c` I write some code to do geometrics modification to images. Some code came from a [my project](https://www.youtube.com/watch?v=LL79iNhs-dI) the other, working very well, from: `Image Processing in C by Dwayne Phillips`.
 
 Mostly it's a work in progress. I'm planning to recode the geometrics functions in NEON Intrinsics.
 
@@ -57,6 +57,8 @@ Mostly it's a work in progress. I'm planning to recode the geometrics functions 
 [ARM NEON 1.0 Programmer's Guide](https://developer.arm.com/docs/den0018/latest/neontm-version-10-programmers-guide)
 
 [Online NEON Simulator](http://szeged.github.io/nevada/)
+
+[ARM NEON Optimization. An Example](http://hilbert-space.de/?p=22)
 
 ## GDB 
 
