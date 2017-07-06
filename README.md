@@ -40,6 +40,8 @@ Inside the file `kernel.c` I write some code to do geometrics modification to im
 
 Mostly it's a work in progress. I'm planning to recode the geometrics functions in NEON Intrinsics.
 
+The images I use are 160x120, and RGB888.
+
 # Internet Link
 
 ## NEON
