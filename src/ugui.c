@@ -5351,6 +5351,85 @@ void UG_DrawBMP( UG_S16 xp, UG_S16 yp, UG_BMP* bmp )
    }
 }
 
+void UG_DrawRGB( UG_S16 xp, UG_S16 yp, UG_S16 width, UG_S16 height, UG_U8* bmp )
+{
+   UG_S16 x,y,xs;
+   UG_U8 r,g,b;
+   UG_U8* p;
+   UG_COLOR c;
+
+   if ( bmp == NULL ) return;
+
+   p = (UG_U8*)bmp;
+   
+   xs = xp;
+   for(y=0;y<height;y++)
+   {
+      xp = xs;
+      for(x=0;x<width;x++)
+      {
+         /* read RGB888 color */
+         r = *p++;
+         g = *p++;
+         b = *p++;
+         c = ((UG_COLOR)r<<16) | ((UG_COLOR)g<<8) | (UG_COLOR)b;
+         UG_DrawPixel( xp++ , yp , c );
+      }
+      yp++;
+   }
+}
+
+void UG_DrawChnl( UG_S16 xp, UG_S16 yp, UG_S16 width, UG_S16 height, UG_U8* bmp )
+{
+   UG_S16 x,y,xs;
+   UG_U8 r,g,b;
+   UG_U8* p;
+   UG_COLOR c;
+
+   if ( bmp == NULL ) return;
+
+   p = (UG_U8*)bmp;
+   
+   xs = xp;
+   for(y=0;y<height;y++)
+   {
+      xp = xs;
+      for(x=0;x<width;x++)
+      {
+         /* read RGB888 color */
+         r = *p;
+         g = *p;
+         b = *p++;
+         c = ((UG_COLOR)r<<16) | ((UG_COLOR)g<<8) | (UG_COLOR)b;
+         UG_DrawPixel( xp++ , yp , c );
+      }
+      yp++;
+   }
+}
+
+void UG_Draw565( UG_S16 xp, UG_S16 yp, UG_S16 width, UG_S16 height, UG_U16* bmp )
+{
+   UG_S16 x,y,xs;
+   UG_U16* p;
+
+   if ( bmp == NULL ) return;
+
+   p = (UG_U16*)bmp;
+   
+   xs = xp;
+   for(y=0;y<height;y++)
+   {
+      xp = xs;
+      for(x=0;x<width;x++)
+      {
+         /* read and draw RGB565 color */
+         UG_DrawPixel( xp++ , yp , *p++ );
+      }
+      yp++;
+   }
+}
+
+
 void UG_TouchUpdate( UG_S16 xp, UG_S16 yp, UG_U8 state )
 {
    gui->touch.xp = xp;

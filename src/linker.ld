@@ -7,7 +7,7 @@ MEMORY
 
 }
 
-heap_size = 0x1000; /* 4K */
+heap_size = 0x6000; /* 4K */
 
 SECTIONS {
     /*. = ORIGIN(RAM) + 0x10000;*/
