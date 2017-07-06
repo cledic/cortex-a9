@@ -32,9 +32,11 @@ Nothing special! I made a function to enable the NEON capabilities: `EnableNEON_
 
 ![alt text](https://github.com/cledic/cortex-a9/blob/master/cortex-a9_qemu.PNG "How run qemu")
 
-I update the file ugui.c with a couple of function to draw RGB.
+I update the file ugui.c with a couple of functions to draw RGB.
 
-Inside the file kernel.c I write some code to do geometrics modification. Some code came from a [my project](https://www.youtube.com/watch?v=LL79iNhs-dI) the other, working very well, from Image Processing in C by Dwayne Phillips.
+Inside the file `kernel.c` I write some code to do geometrics modification. Some code came from a [my project](https://www.youtube.com/watch?v=LL79iNhs-dI) the other, working very well, from: `Image Processing in C by Dwayne Phillips`.
+
+Mostly it's a work in progress. I'm planning to recode the geometrics functions in NEON Intrinsics.
 
 # Internet Link
 
