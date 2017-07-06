@@ -30,14 +30,25 @@ At this point, I set a breakpoint and issue the `c` command to `continue`. Then 
 ![alt text](https://github.com/cledic/cortex-a9/blob/master/cortex-a9_qemu_gdb.PNG "How run gdb with qemu")
 
 # Internet Link
+
 ## NEON
+
 [ARM Coding for NEON Part 1: Load and Stores](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-1-load-and-stores)
+
 [ARM Coding for NEON Part 2: Dealing With Leftovers](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-2-dealing-with-leftovers)
+
 [ARM Coding for NEON Part 3: Matrix Multiplication](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-3-matrix-multiplication)
+
 [ARM Coding for NEON Part 4: Shifting Left and Right](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-4-shifting-left-and-right)
+
 [ARM Coding for NEON Part 5: Rearranging Vectors](https://community.arm.com/processors/b/blog/posts/coding-for-neon---part-5-rearranging-vectors)
+
 [Online NEON Simulator](http://szeged.github.io/nevada/)
+
 ## GDB 
+
 [Source and Machine Code](https://www-zeuthen.desy.de/unix/unixguide/infohtml/gdb/Machine-Code.html)
+
 [Using gdb for Assembly Language Debugging](https://www.csee.umbc.edu/~cpatel2/links/310/nasm/gdb_help.shtml)
+
 
