@@ -34,6 +34,8 @@ Nothing special! I made a function to enable the NEON capabilities: `EnableNEON_
 
 I update the file ugui.c with a couple of function to draw RGB.
 
+Inside the file kernel.c I write some code to do geometrics modification. Some code came from a [my project](https://www.youtube.com/watch?v=LL79iNhs-dI) the other, working very well, from Image Processing in C by Dwayne Phillips.
+
 # Internet Link
 
 ## NEON
