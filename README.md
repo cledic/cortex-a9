@@ -17,13 +17,13 @@ After the installation I update the PATH environment var with the **GCC** and **
 To compile and run **QEMU** I use the BASH shell that Octave have installed on my PC. I modify the Makefile accordirly.
 
 # RUN the software
-To run the software I use the command `make qemu`. The make run `qemu-system-arm -M vexpress-a9 -serial mon:stdio -kernel bin/kernel.elf`.
+To run the software I use the command `make qemu`. The `make` command execute: `qemu-system-arm -M vexpress-a9 -serial mon:stdio -kernel bin/kernel.elf`.
 
 ![alt text](https://github.com/cledic/cortex-a9/blob/master/neon_docs/cortex-a9_qemu.PNG "How run qemu")
 
 # DEBUG the software
 To debug I use `make dqemu` and, on a second bash shell, I run: `arm-linux-gnueabihf-gdb -se bin/kernel.elf -x gdb_cmd.txt`.
-At this point, I set a breakpoint with the `b 77` comamnd, and issue the `c` command to `continue`. Then I use the `si` command to `step-into`. The GDB is configured to show the assembler line.
+At this point, I set a breakpoint with the `b 77` comamnd, and issue the `c` command to `continue`. Then I use the `si` command to `step-into`. The GDB is configured to show the assembler line. See the content of the file: `gdb_cmd.txt`.
 
 ![alt text](https://github.com/cledic/cortex-a9/blob/master/neon_docs/cortex-a9_qemu_gdb.PNG "How run gdb with qemu")
 
