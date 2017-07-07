@@ -1,7 +1,9 @@
 # NEON development on an emulated cortex-a9
 Serching for an easy and everywhere usable tool to study and develop with ARM NEON, I found the **ghaflims** work to do baremetal programming on Cortex-A9 using QEMU.
 
-I use his effort to start my develop with  ARM NEON. Still a work in progess, here I write some of the steps I follow. Hope to help.
+Im using his effort to start my study develop with  ARM NEON. In my support came the wonderfull on-line tool: [NEVADA](http://szeged.github.io/nevada/) a NEON Visualizer Tool. This tool help me a lot, I use it to test instruction and syntax, before write down something and compile it. 
+
+Still a work in progess, here I write some of the steps I follow. Hope to help.
 
 # Software I use
 I use this code to try to develop NEON assembler code on **cortex-a9** emulated processor on windows. I use **Linaro GCC**, and **QEMU**.
