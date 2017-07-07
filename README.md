@@ -14,7 +14,7 @@ I use: **qemu-w32-setup-20170420** and **gcc-linaro-6.3.1-2017.05-i686-mingw32_a
 
 After the installation I update the PATH environment var with the **GCC** and **QEMU** path.
 
-To compile and run **QEMU** I use the BASH shell that Octave have installed on my PC. I modify the Makefile accordirly.
+To compile and run **QEMU** I use the BASH shell that Octave have installed on my PC. I modify the Makefile accordingly.
 
 # RUN the software
 To run the software I use the command `make qemu`. The `make` command execute: `qemu-system-arm -M vexpress-a9 -serial mon:stdio -kernel bin/kernel.elf`.
