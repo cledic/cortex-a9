@@ -1,13 +1,9 @@
-# Original credits to ghaflims
-# cortex-a9
-This is my attempt to do baremetal programming on cortex-a9 using qemu and vexpress-a9
-so far I got keyboard (pl050) , CLCD display (pl111) , timer (sp804) , uart (pl011) , interrupt (bare minimum Generic Interrupt Controller) (gic) working
-the code is a mess at this moment.. this is just a proof of concept
-if I have time I'm planning to clean up the code and seperate things like (Makefile, drivers, syscall, startup, interrupt ..etc)
-
-tags: qemu cortex-a9 vexpress-a9 arm gic pl050 pl111 sp804 pl011 kmi clcd timer uart irq
-
 # NEON development on an emulated cortex-a9
+Serching for an easy and everywhere usable tool to study and develop with ARM NEON, I found the **ghaflims** work to do baremetal programming on Cortex-A9 using QEMU.
+
+I use his effort to start my develop with  ARM NEON. Still a work in progess, here I write some of the steps I follow. Hope to help.
+
+# Software I use
 I use this code to try to develop NEON assembler code on **cortex-a9** emulated processor on windows. I use **Linaro GCC**, and **QEMU**.
 To debug the software I use **GDB**. See the file `gdb_cmd.txt` for the run time **GDB** options I use.
 
